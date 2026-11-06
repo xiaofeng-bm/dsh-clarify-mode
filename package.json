@@ -1,0 +1,45 @@
+{
+  "name": "dsh-clarify-mode",
+  "version": "0.1.0",
+  "description": "需求澄清模式：动手之前先问清楚。Agent 只问不写，最多 5 轮出验收清单，确认后才解锁写文件。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "policy.md",
+    "dimensions.md",
+    "cordis.patch.yml"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.2"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ],
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "clarify",
+    "requirements",
+    "interview",
+    "spec-driven",
+    "vibe-coding"
+  ],
+  "author": "baimin <xiaofengbm@gmail.com>",
+  "license": "MIT"
+}
